@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ShimmerLabel"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Shimmer animation for UILabel"
   s.description  = "UILabel subclass with shimmerColor property. Provides shimmer animation on the label"
   s.homepage     = "https://github.com/smakeev/ShimmerLabel"
