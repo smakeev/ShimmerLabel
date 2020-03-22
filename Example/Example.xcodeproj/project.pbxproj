@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		B66B361924278F8D005D887D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B361824278F8D005D887D /* AppDelegate.swift */; };
-		B66B361B24278F8D005D887D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B361A24278F8D005D887D /* SceneDelegate.swift */; };
 		B66B361D24278F8D005D887D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B361C24278F8D005D887D /* ViewController.swift */; };
 		B66B362024278F8D005D887D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66B361E24278F8D005D887D /* Main.storyboard */; };
 		B66B362224278F8E005D887D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B66B362124278F8E005D887D /* Assets.xcassets */; };
 		B66B362524278F8E005D887D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66B362324278F8E005D887D /* LaunchScreen.storyboard */; };
+		B66B362D242790C3005D887D /* ShimmerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B362C242790C3005D887D /* ShimmerLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B66B361524278F8D005D887D /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66B361824278F8D005D887D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B66B361A24278F8D005D887D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B66B361C24278F8D005D887D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B66B361F24278F8D005D887D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B66B362124278F8E005D887D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B66B362424278F8E005D887D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B66B362624278F8E005D887D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B66B362C242790C3005D887D /* ShimmerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShimmerLabel.swift; path = ../ShimmerLabel/ShimmerLabel/ShimmerLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +40,7 @@
 		B66B360C24278F8D005D887D = {
 			isa = PBXGroup;
 			children = (
+				B66B362C242790C3005D887D /* ShimmerLabel.swift */,
 				B66B361724278F8D005D887D /* Example */,
 				B66B361624278F8D005D887D /* Products */,
 			);
@@ -57,7 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				B66B361824278F8D005D887D /* AppDelegate.swift */,
-				B66B361A24278F8D005D887D /* SceneDelegate.swift */,
 				B66B361C24278F8D005D887D /* ViewController.swift */,
 				B66B361E24278F8D005D887D /* Main.storyboard */,
 				B66B362124278F8E005D887D /* Assets.xcassets */,
@@ -140,7 +140,7 @@
 			files = (
 				B66B361D24278F8D005D887D /* ViewController.swift in Sources */,
 				B66B361924278F8D005D887D /* AppDelegate.swift in Sources */,
-				B66B361B24278F8D005D887D /* SceneDelegate.swift in Sources */,
+				B66B362D242790C3005D887D /* ShimmerLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

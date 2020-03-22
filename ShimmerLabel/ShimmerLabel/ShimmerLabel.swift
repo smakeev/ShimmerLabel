@@ -9,9 +9,22 @@
 import Foundation
 import UIKit
 
-public class ShimmerLabel: UILabel {
+@IBDesignable public class ShimmerLabel: UILabel {
 	
-	private var topLabel: UILabel!
+	private var initialized = false
+	private var _topLabel: UILabel? = nil
+	private var topLabel: UILabel! {
+		get {
+			if _topLabel == nil {
+				subinit()
+			}
+			return _topLabel
+		}
+		
+		set {
+			_topLabel = newValue
+		}
+	}
 	private var gradientLayer: CAGradientLayer!
 	
 	public override var text: String? {
@@ -36,13 +49,19 @@ public class ShimmerLabel: UILabel {
 		}
 	}
 	
+	@IBInspectable
+	public var shimmerColor: UIColor = .white {
+		didSet {
+			topLabel.textColor = shimmerColor
+		}
+	}
+	
 	public override var textColor: UIColor! {
 		get {
 			super.textColor
 		}
 		
 		set {
-			topLabel.textColor = newValue
 			super.textColor = newValue
 		}
 	}
@@ -210,8 +229,8 @@ public class ShimmerLabel: UILabel {
 	}
 	
 	public override func awakeFromNib() {
-		super.awakeFromNib()
 		subinit()
+		super.awakeFromNib()
 	}
 	
 	public convenience init() {
@@ -224,37 +243,38 @@ public class ShimmerLabel: UILabel {
 	}
 	
 	public required init?(coder: NSCoder) {
+		_topLabel = UILabel(coder: coder)
 		super.init(coder: coder)
-		subinit()
 	}
 	
 	private func subinit() {
-		if let validTopLabel = topLabel {
-			validTopLabel.removeFromSuperview()
-			topLabel = nil
+		if _topLabel == nil{
+			_topLabel = UILabel()
 		}
-	
-		topLabel = UILabel()
-		topLabel.translatesAutoresizingMaskIntoConstraints = false
-		
-		self.addSubview(topLabel)
-		topLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-		topLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-		topLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-		topLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-		
-		gradientLayer = CAGradientLayer()
-		gradientLayer.colors = [UIColor.white.cgColor, UIColor.clear.cgColor, UIColor.white.cgColor]
-		gradientLayer.locations = [0, 0.5, 1]
-		gradientLayer.transform = CATransform3DMakeRotation(CGFloat(45 * Double.pi / 180), 0, 0, 1)
-		topLabel.layer.mask = gradientLayer
+
+		if !initialized && _topLabel != nil {
+			topLabel.translatesAutoresizingMaskIntoConstraints = false
+			topLabel.textColor = shimmerColor
+			self.addSubview(topLabel)
+			topLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+			topLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+			topLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+			topLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+			
+			gradientLayer = CAGradientLayer()
+			gradientLayer.colors = [UIColor.white.cgColor, UIColor.clear.cgColor, UIColor.white.cgColor]
+			gradientLayer.locations = [0, 0.5, 1]
+			gradientLayer.transform = CATransform3DMakeRotation(CGFloat(45 * Double.pi / 180), 0, 0, 1)
+			
+			topLabel.layer.mask = gradientLayer
+			initialized = true
+		}
 		
 		self.addAnimation()
 	}
 	
 	private func addAnimation() {
 		gradientLayer.removeAllAnimations()
-		
 		let animation = CABasicAnimation(keyPath: "transform.translation.x")
 		animation.fromValue = -self.frame.size.width
 		animation.toValue = self.frame.size.width
