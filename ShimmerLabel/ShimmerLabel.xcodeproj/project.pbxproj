@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B66B36042427869F005D887D /* ShimmerLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B66B36022427869F005D887D /* ShimmerLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B66B360B242786FA005D887D /* ShimmerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B360A242786FA005D887D /* ShimmerLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B66B35FF2427869F005D887D /* ShimmerLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShimmerLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66B36022427869F005D887D /* ShimmerLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShimmerLabel.h; sourceTree = "<group>"; };
 		B66B36032427869F005D887D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B66B360A242786FA005D887D /* ShimmerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 			children = (
 				B66B36022427869F005D887D /* ShimmerLabel.h */,
 				B66B36032427869F005D887D /* Info.plist */,
+				B66B360A242786FA005D887D /* ShimmerLabel.swift */,
 			);
 			path = ShimmerLabel;
 			sourceTree = "<group>";
@@ -95,6 +98,7 @@
 				TargetAttributes = {
 					B66B35FE2427869F005D887D = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -131,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66B360B242786FA005D887D /* ShimmerLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +265,7 @@
 		B66B36082427869F005D887D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 6WLV67D2QG;
@@ -276,6 +282,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.someprojects.ShimmerLabel;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +291,7 @@
 		B66B36092427869F005D887D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 6WLV67D2QG;
